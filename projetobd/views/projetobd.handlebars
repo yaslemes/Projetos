@@ -1,0 +1,50 @@
+<div id="grafico-container"> <!-- Container que envolve o gráfico -->
+    <canvas id="meuGrafico"></canvas> <!-- Elemento onde o gráfico será desenhado -->
+</div>
+
+<script>
+    // Função para criar o gráfico
+    function criarGrafico(tipo = 'bar') { // Define uma função que aceita um tipo de gráfico (padrão: 'bar')
+        const ctx = document.getElementById('meuGrafico').getContext('2d'); // Obtém o contexto 2D do canvas
+        const meuGrafico = new Chart(ctx, { // Cria uma nova instância do gráfico
+            type: tipo, // Tipo de gráfico ('bar', 'line', 'pie', etc.)
+            data: {
+                labels: [ // Rótulos para os dados no eixo X
+                    {{#each dados}} // Itera sobre cada item em 'dados'
+                    '{{this.nome_pessoa}} {{this.data_venda}}', // Formata os rótulos com o nome e a data da venda
+                    {{/each}} // Fim da iteração
+                ],
+                datasets: [{ // Conjunto de dados para o gráfico
+                    label: 'Comissão Funcionários', // Rótulo do conjunto de dados
+                    data: [ // Dados a serem exibidos no gráfico
+                        {{#each dados}} // Itera sobre cada item em 'dados'
+                        '{{this.comissao_venda}}', // Obtém o valor da comissão para o gráfico
+                        {{/each}} // Fim da iteração
+                    ],
+                    backgroundColor: 'rgb(212, 234, 248)', // Cor de fundo das barras
+                    borderColor: 'black', // Cor da borda das barras
+                    borderWidth: 1 // Largura da borda das barras
+                }]
+            },
+            options: { // Opções de configuração do gráfico
+                responsive: true, // Torna o gráfico responsivo
+                scales: { // Configurações dos eixos
+                    x: {
+                        ticks: {
+                            autoSkip: false, // Desativa o auto skip (pular rótulos)
+                            maxRotation: 0, // Rótulos não rotacionam (horizontal)
+                            minRotation: 0 // Rótulos não rotacionam (horizontal)
+                        }
+                    },
+                    y: {
+                        beginAtZero: true // Começa o eixo Y em zero
+                    }
+                }
+            }
+        });
+    }
+
+    // Inicializa o gráfico ao carregar a página
+    criarGrafico();
+</script>
+

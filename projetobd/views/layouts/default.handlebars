@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Gráfico de Comissões</title> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importa a biblioteca Chart.js para gráficos -->
+    <style>
+        body {hbj
+            font-family: Arial, sans-serif; /* Define a fonte do corpo da página */
+            height: 100vh; /* Define a altura do corpo como 100% da altura da janela */
+            margin: 0; /* Remove a margem padrão do navegador */
+            background-color: rgb(212, 234, 248); /* Cor de fundo azul claro da página */
+        }
+
+        .topo {
+            width: 100%; /* Define a largura do cabeçalho como 100% */
+            height: 12%; /* Define a altura do cabeçalho */
+            background-color: rgb(212, 234, 248); /* Cor de fundo do cabeçalho */
+            color: rgb(75, 216, 235); /* Cor do texto no cabeçalho */
+            display: flex; /* Usa flexbox para o layout do cabeçalho */
+            align-items: center; /* Centraliza os itens verticalmente */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+        }
+
+        img {
+            height: 80%; /* Ajusta a altura da imagem */
+            margin-right: 10px; /* Espaçamento à direita da imagem */
+        }
+
+        h1 {
+            font-family: "Edu AU VIC WA NT Dots", cursive; /* Define uma fonte personalizada para o título */
+            margin: 0; /* Remove a margem padrão do título */
+            font-size: 24px; /* Define o tamanho da fonte do título */
+        }
+
+        #grafico-container {
+            width: 90%; /* Define a largura do container do gráfico */
+            height: 90%; /* Define a altura do container do gráfico */
+            margin: 0 auto; /* Centraliza o container horizontalmente */
+            background-color: #f3f1fb; /* Cor de fundo do container do gráfico */
+            display: flex; /* Usa flexbox para o layout do container do gráfico */
+            flex-direction: column; /* Alinha os itens em coluna */
+            align-items: center; /* Centraliza os itens horizontalmente dentro do container */
+            justify-content: center; /* Centraliza os itens verticalmente dentro do container */
+            padding: 10px; /* Adiciona espaçamento interno ao container */
+            border-radius: 10px; /* Arredonda as bordas do container */
+        } 
+
+        @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap'); /* Importa uma fonte do Google Fonts */
+    </style>
+</head>
+<body>
+    <div class="topo"> <!-- Início do cabeçalho da página -->
+        <img src="https://i.pinimg.com/originals/91/21/f3/9121f30436f31860ee094508a949d481.png" alt=""> <!-- Imagem no cabeçalho -->
+        <h1>Sapatinho de Cristal</h1> <!-- Título da página -->
+    </div>
+    <div id="grafico-container"> <!-- Container para o gráfico -->
+        {{{body}}} <!-- Local onde o conteúdo do gráfico será renderizado -->
+    </div>
+</body>
+</html>
